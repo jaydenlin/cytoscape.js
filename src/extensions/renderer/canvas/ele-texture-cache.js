@@ -4,7 +4,7 @@ var math = require( '../../../math' );
 var util = require( '../../../util' );
 var Heap = require( '../../../heap' );
 var defs = require( './texture-cache-defs' );
-
+var window = require('../../../window');
 var minTxrH = 25; // the size of the texture cache for small height eles (special case)
 var txrStepH = 50; // the min size of the regular cache, and the size it increases with each step up
 var minLvl = -4; // when scaling smaller than that we don't need to re-render
@@ -350,7 +350,7 @@ ETCp.addTexture = function( txrH, minW ){
   txr.invalidatedWidth = 0;
   txr.fullnessChecks = 0;
 
-  txr.canvas = document.createElement('canvas'); // eslint-disable-line no-undef
+  txr.canvas = window.document.createElement('canvas'); // eslint-disable-line no-undef
   txr.canvas.width = txr.width;
   txr.canvas.height = txr.height;
 

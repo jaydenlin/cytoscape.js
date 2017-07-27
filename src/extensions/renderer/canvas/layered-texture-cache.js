@@ -5,7 +5,7 @@ var math = require( '../../../math' );
 var Heap = require( '../../../heap' );
 var is = require( '../../../is' );
 var defs = require( './texture-cache-defs' );
-
+var window = require('../../../window');
 var defNumLayers = 1; // default number of layers to use
 var minLvl = -4; // when scaling smaller than that we don't need to re-render
 var maxLvl = 2; // when larger than this scale just render directly (caching is not helpful)
@@ -72,7 +72,7 @@ LTCp.makeLayer = function( bb, lvl ){
   var w = Math.ceil( bb.w * scale );
   var h = Math.ceil( bb.h * scale );
 
-  var canvas = document.createElement('canvas'); // eslint-disable-line no-undef
+  var canvas = window.document.createElement('canvas'); // eslint-disable-line no-undef
 
   canvas.width = w;
   canvas.height = h;

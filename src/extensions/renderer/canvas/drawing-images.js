@@ -1,7 +1,7 @@
 'use strict';
 
 var CRp = {};
-
+var window = require('../../../window');
 CRp.safeDrawImage = function( context, img, ix, iy, iw, ih, x, y, w, h ){
   var r = this;
 
@@ -37,12 +37,12 @@ CRp.drawInscribedImage = function( context, img, node, index ){
 
   // workaround for broken browsers like ie
   if( null == imgW || null == imgH ){
-    document.body.appendChild( img ); // eslint-disable-line no-undef
+    window.document.body.appendChild( img ); // eslint-disable-line no-undef
 
     imgW = img.cachedW = img.width || img.offsetWidth;
     imgH = img.cachedH = img.height || img.offsetHeight;
 
-    document.body.removeChild( img ); // eslint-disable-line no-undef
+    window.document.body.removeChild( img ); // eslint-disable-line no-undef
   }
 
   var w = imgW;

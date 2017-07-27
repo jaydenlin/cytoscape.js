@@ -1,11 +1,11 @@
 'use strict';
 
 var is = require( '../../../is' );
-
+var window = require('../../../window');
 var CRp = {};
 
 CRp.createBuffer = function( w, h ){
-  var buffer = document.createElement( 'canvas' ); // eslint-disable-line no-undef
+  var buffer = window.document.createElement( 'canvas' ); // eslint-disable-line no-undef
   buffer.width = w;
   buffer.height = h;
 
@@ -52,7 +52,7 @@ CRp.bufferCanvasImage = function( options ){
     scale *= pxRatio;
   }
 
-  var buffCanvas = document.createElement( 'canvas' ); // eslint-disable-line no-undef
+  var buffCanvas = window.document.createElement( 'canvas' ); // eslint-disable-line no-undef
 
   buffCanvas.width = width;
   buffCanvas.height = height;

@@ -4,7 +4,7 @@ var is = require( '../../../is' );
 var util = require( '../../../util' );
 var math = require( '../../../math' );
 var Event = require( '../../../event' );
-
+var window = require('../../../window');
 var BRp = {};
 
 BRp.registerBinding = function( target, event, handler, useCapture ){
@@ -17,7 +17,7 @@ BRp.registerBinding = function( target, event, handler, useCapture ){
 BRp.binder = function( tgt ){
   var r = this;
 
-  var tgtIsDom = tgt === window || tgt === document || tgt === document.body || is.domElement( tgt );
+  var tgtIsDom = tgt === window || tgt === window.document || tgt === window.document.body || is.domElement( tgt );
 
   if( r.supportsPassiveEvents == null ){
 

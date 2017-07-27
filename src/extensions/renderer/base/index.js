@@ -21,16 +21,15 @@ BRp.init = function( options ){
 
   // prepend a stylesheet in the head such that
   if( window ){
-    var document = window.document;
-    var head = document.head;
+    var head = window.document.head;
     var stylesheetId = '__________cytoscape_stylesheet';
     var className =    '__________cytoscape_container';
-    var stylesheetAlreadyExists = document.getElementById( stylesheetId ) != null;
+    var stylesheetAlreadyExists = window.document.getElementById( stylesheetId ) != null;
 
     ctr.className = ( ctr.className || '' ) + ' ' + className;
 
     if( !stylesheetAlreadyExists ){
-      var stylesheet = document.createElement('style');
+      var stylesheet = window.document.createElement('style');
 
       stylesheet.id = stylesheetId;
       stylesheet.innerHTML = '.'+className+' { position: relative; }';
@@ -185,7 +184,7 @@ BRp.destroy = function(){
 
   if( r.labelCalcDiv ){
     try {
-      document.body.removeChild( r.labelCalcDiv ); // eslint-disable-line no-undef
+      window.document.body.removeChild( r.labelCalcDiv ); // eslint-disable-line no-undef
     } catch( e ){
       // ie10 issue #1014
     }

@@ -3,7 +3,7 @@
 var math = require( '../../../../math' );
 var is = require( '../../../../is' );
 var util = require( '../../../../util' );
-
+var window = require('../../../../window');
 var BRp = {};
 
 BRp.recalculateNodeLabelProjection = function( node ){
@@ -422,8 +422,8 @@ BRp.calculateLabelDimensions = function( ele, text, extraKey ){
   var div = this.labelCalcDiv;
 
   if( !div ){
-    div = this.labelCalcDiv = document.createElement( 'div' ); // eslint-disable-line no-undef
-    document.body.appendChild( div ); // eslint-disable-line no-undef
+    div = this.labelCalcDiv = window.document.createElement( 'div' ); // eslint-disable-line no-undef
+    window.document.body.appendChild( div ); // eslint-disable-line no-undef
   }
 
   var ds = div.style;
